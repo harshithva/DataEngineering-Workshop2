@@ -1,8 +1,9 @@
 from django.contrib import admin
-from .models import Members
+from .models import Students
 
-class PersonAdmin(admin.ModelAdmin):
-    list_display = ('firstname', 'lastname')
+class DjStudentAdmin(admin.ModelAdmin):
+    list_display = ("first_name", "last_name", "address", "roll_number", "mobile", "branch")
+    list_filter = ("branch",)
 
-admin.site.register(Members,PersonAdmin)
 # Register your models here.
+admin.site.register(Students, DjStudentAdmin) 
